@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div>
+    <select name="route" id="route">
+      <option value="forward">из A в B</option>
+      <option value="backward">из B в A</option>
+      <option value="return">из A в B и обратно в А</option>
+    </select>
+    <select name="time-forward" id="time-forward"></select>
+    <select name="time-backward" id="time-backward"></select>
+  </div>
+  <div>
+    <label for="num">Количество билетов</label>
+    <input id="num">
+    <button id="calculate-btn">Посчитать</button>
+  </div>
+  <div id="info"></div>
+</body>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  select:empty {
+    display: none;
+  }
+</style>
+
+</html>
