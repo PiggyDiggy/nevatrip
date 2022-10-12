@@ -32,7 +32,6 @@ export default {
 <style>
 .tour__times {
   list-style: none;
-  margin-left: 36px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -48,12 +47,18 @@ export default {
   border-radius: 11px;
   padding: 2px 13px;
   cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
+.tour__time:hover {
+  background-color: #6ba6ff;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 @media screen and (min-width: 800px) {
   .tour__times {
-    margin: 0;
-    column-gap: 6px;
+    display: contents;
   }
 
   .tour__time {

@@ -5,11 +5,13 @@
       :key="index"
       class="tour__feature"
     >
-      {{ feature }}
-      <TourTimes
-        v-if="index === tour.features.length - 1"
-        :times="tour.times"
-      />
+      <div class="tour__feature-inner">
+        <span>{{ feature }}</span>
+        <TourTimes
+          v-if="index === tour.features.length - 1"
+          :times="tour.times"
+        />
+      </div>
     </li>
   </ul>
 </template>
@@ -40,13 +42,21 @@ export default {
   font-size: 14px;
   margin-block: 10px;
   align-items: center;
-  column-gap: 20px;
-  row-gap: 10px;
+  gap: 20px;
 }
 
 .tour__feature:last-child {
-  margin: 0;
+  align-items: flex-start;
+}
+
+.tour__feature-inner {
+  display: flex;
   flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tour__feature-inner span {
+  margin-right: 5px;
 }
 
 .tour__feature::before {
@@ -58,14 +68,22 @@ export default {
   flex-shrink: 0;
 }
 
+.tour__feature:last-child::before {
+  margin-top: 6px;
+}
+
 @media screen and (min-width: 800px) {
   .tour__features {
     margin-top: 15px;
   }
-  
+
   .tour__feature {
     font-size: 18px;
     color: #343434;
+  }
+
+  .tour__feature-inner {
+    row-gap: 8px;
   }
 }
 </style>
